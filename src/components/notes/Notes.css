@@ -1,0 +1,25 @@
+.notes {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 50px;
+	background-color: var(--notesBackgroundColor);
+}
+.notes-top {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.notes-hr {
+	border: 0.5px solid rgb(194, 194, 239);
+}
+.notes-header {
+	font-size: 40px;
+	font-weight: 300;
+	color: var(--headerColor);
+}
+.notes-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}

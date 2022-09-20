@@ -2,7 +2,7 @@ import { BsSearch } from 'react-icons/bs';
 import './Searchbar.css';
 const Searchbar = () => {
 	return (
-		<div className='searchbar'>
+		<div className='wrapper searchbar'>
 			<div className='searchbar-left-side'>
 				<BsSearch className='ic ic-search' />
 			</div>

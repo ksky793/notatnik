@@ -5,13 +5,25 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+*:focus {
+	outline: none;
+}
 :root {
 	--notesBackgroundColor: #eceff8;
+	--headerColor: #5d5888;
+	--addNoteHeaderColor: #537db1;
+	--noteBackgroundColor: #f7faff;
+	--noteDataColor: #5b81ae;
+	--noteTitleColor: #40628b;
+	--noteParagraphColor: #7fa2cb;
 }
 
 body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: var(--notesBackgroundColor);
+}
+.wrapper {
+	padding: 0px 50px;
 }
 
 .ic {

@@ -1,0 +1,20 @@
+.btn-add-note {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+}
+
+.btn-add-note .ic-plus,
+.header-add-note {
+	color: var(--addNoteHeaderColor);
+}
+.btn-add-note .ic-plus {
+	margin-right: 6px;
+	font-size: 28px;
+}
+.header-add-note {
+	font-size: 20px;
+	font-weight: 200;
+}
