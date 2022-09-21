@@ -4,31 +4,33 @@ import Note from './note/Note';
 import './Notes.css';
 import AddNotePopup from './addNotePopup/AddNotePopup';
 
-const Notes = () => {
-	const [note, setNote] = useState('');
-	const [notes, setNotes] = useState([]);
+const Notes = ({ setNotes, notes }) => {
+	const [isClosed, setIsClosed] = useState(true);
 
 	return (
 		<div className='wrapper notes'>
 			<div className='notes-top'>
 				<h1 className='notes-header'>My Notes</h1>
-				<BtnAddNote />
+				<BtnAddNote setIsClosed={setIsClosed} />
 			</div>
 			<hr className='notes-hr' />
-			<div className='notes-list'>
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
-				<Note />
+			<div className='notes-list' style={{ display: !isClosed && 'none' }}>
+				{notes &&
+					notes.map((note, index) => (
+						<Note
+							key={index}
+							date={note.date}
+							title={note.title}
+							textArea={note.textArea}
+						/>
+					))}
 			</div>
-			<AddNotePopup />
+			<AddNotePopup
+				isClosed={isClosed}
+				setIsClosed={setIsClosed}
+				setNotes={setNotes}
+				notes={notes}
+			/>
 		</div>
 	);
 };
