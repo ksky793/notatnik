@@ -16,12 +16,16 @@ const Notes = ({ setNotes, notes }) => {
 			<hr className='notes-hr' />
 			<div className='notes-list' style={{ display: !isClosed && 'none' }}>
 				{notes &&
-					notes.map((note, index) => (
+					notes.map((note) => (
 						<Note
-							key={index}
-							date={note.date}
-							title={note.title}
-							textArea={note.textArea}
+							key={note.id}
+							// id={note.id}
+							// date={note.date}
+							// title={note.title}
+							// textArea={note.textArea}
+							note={note}
+							notes={notes}
+							setNotes={setNotes}
 						/>
 					))}
 			</div>

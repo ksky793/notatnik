@@ -28,6 +28,7 @@ const AddNotePopup = ({ isClosed, setIsClosed, notes, setNotes }) => {
 	};
 	const addNote = () => {
 		const noteItem = {
+			id: Math.floor(Math.random() * 9999 + 1),
 			date: getDate(),
 			title: title,
 			textArea: textArea,
