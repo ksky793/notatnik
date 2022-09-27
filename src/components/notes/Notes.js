@@ -4,7 +4,7 @@ import Note from './note/Note';
 import './Notes.css';
 import AddNotePopup from './addNotePopup/AddNotePopup';
 
-const Notes = ({ setNotes, notes }) => {
+const Notes = ({ setNotes, notes, searchedNote }) => {
 	const [isClosed, setIsClosed] = useState(true);
 
 	return (
@@ -16,18 +16,20 @@ const Notes = ({ setNotes, notes }) => {
 			<hr className='notes-hr' />
 			<div className='notes-list' style={{ display: !isClosed && 'none' }}>
 				{notes &&
-					notes.map((note) => (
-						<Note
-							key={note.id}
-							// id={note.id}
-							// date={note.date}
-							// title={note.title}
-							// textArea={note.textArea}
-							note={note}
-							notes={notes}
-							setNotes={setNotes}
-						/>
-					))}
+					notes
+						.filter((note) => {
+							return searchedNote.toLowerCase() === ''
+								? note
+								: note.title.toLowerCase().includes(searchedNote);
+						})
+						.map((note) => (
+							<Note
+								key={note.id}
+								note={note}
+								notes={notes}
+								setNotes={setNotes}
+							/>
+						))}
 			</div>
 			<AddNotePopup
 				isClosed={isClosed}

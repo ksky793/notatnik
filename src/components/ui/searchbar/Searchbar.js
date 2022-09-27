@@ -1,6 +1,6 @@
 import { BsSearch } from 'react-icons/bs';
 import './Searchbar.css';
-const Searchbar = () => {
+const Searchbar = ({ setSearchedNote }) => {
 	return (
 		<div className='wrapper searchbar'>
 			<div className='searchbar-left-side'>
@@ -11,6 +11,7 @@ const Searchbar = () => {
 					type='text'
 					className='searchbar-input'
 					placeholder='Search...'
+					onChange={(e) => setSearchedNote(e.target.value)}
 				/>
 			</div>
 		</div>
