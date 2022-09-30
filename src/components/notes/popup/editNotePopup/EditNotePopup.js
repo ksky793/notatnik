@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import './EditNotePopup.css';
+import '../Popup.css';
+
 const EditNotePopup = ({ editedNote, notes, setNotes, setIsEditPopClosed }) => {
 	const [title, setTitle] = useState(editedNote[0].title);
 	const [textArea, setTextArea] = useState(editedNote[0].textArea);
@@ -22,9 +23,9 @@ const EditNotePopup = ({ editedNote, notes, setNotes, setIsEditPopClosed }) => {
 		setIsEditPopClosed(true);
 	};
 	return (
-		<div className='edit-note-popup-container'>
-			<div className='edit-note-popup'>
-				<h1 className='header-popup-edit-note'>Edit Note</h1>
+		<div className='popup-container'>
+			<div className='popup'>
+				<h1 className='header-popup'>Edit Note</h1>
 				<input
 					className='popup-input-note'
 					value={title}
@@ -35,10 +36,10 @@ const EditNotePopup = ({ editedNote, notes, setNotes, setIsEditPopClosed }) => {
 					value={textArea}
 					onChange={(e) => setTextArea(e.target.value)}
 				/>
-				<button className='popup-btn-edit-note' onClick={updateNote}>
-					Update Note
+				<button className='popup-btn' onClick={updateNote}>
+					UPDATE NOTE
 				</button>
-				<AiOutlineClose className='ic-close-popup' onClick={closePopup} />
+				<AiOutlineClose className='ic ic-close-popup' onClick={closePopup} />
 			</div>
 		</div>
 	);

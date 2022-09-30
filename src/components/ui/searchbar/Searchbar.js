@@ -4,7 +4,7 @@ const Searchbar = ({ setSearchedNote }) => {
 	return (
 		<div className='wrapper searchbar'>
 			<div className='searchbar-left-side'>
-				<BsSearch className='ic ic-search' />
+				<BsSearch className='ic-search' />
 			</div>
 			<div className='searchbar-right-side'>
 				<input

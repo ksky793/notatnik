@@ -9,13 +9,39 @@
 	outline: none;
 }
 :root {
-	--notesBackgroundColor: #eceff8;
-	--headerColor: #5d5888;
+	--placeholderColor: rgb(176, 176, 244);
+	--inputColor: rgb(95, 95, 159);
+
+	--notesBackgroundColor: #1a1546;
+	--headerColor: #beb8fb;
+	--addNoteHeaderColor: #beb8fb;
+	--noteBackgroundColor: #100c34;
+	--hrColor: rgb(218, 92, 92);
+	--noteDataColor: #9f97e9;
+	--noteTitleColor: #beb8fb;
+	--noteParagraphColor: #867fca;
+	--noteShadowColor: rgb(11, 11, 59);
+
+	/* Icons */
+	--iconHoverColor: #867fca;
+	--iconToolsColor: rgb(218, 92, 92);
+
+	--searchBarBackgroundColor: rgb(255, 255, 255);
+
+	/* Popup  */
+	--popupContainerBackgroundColor: #1a1546;
+	--popupColor: #100c34;
+	--popupShadowColor: rgb(11, 11, 59);
+	--popupTitleColor: #beb8fb;
+	--popupButtonColor: rgb(218, 92, 92);
+
+	/* --notesBackgroundColor: #eceff8; */
+	/* --headerColor: #5d5888;
 	--addNoteHeaderColor: #537db1;
 	--noteBackgroundColor: #f7faff;
 	--noteDataColor: #5b81ae;
 	--noteTitleColor: #40628b;
-	--noteParagraphColor: #7fa2cb;
+	--noteParagraphColor: #7fa2cb; */
 }
 
 body {
@@ -27,5 +53,10 @@ body {
 }
 
 .ic {
+	color: var(--iconToolsColor);
+	transition: ease all 0.3s;
 	cursor: pointer;
+}
+.ic:hover {
+	color: var(--iconHoverColor);
 }

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import BtnAddNote from '../ui/buttons/BtnAddNote';
 import Note from './note/Note';
 import './Notes.css';
-import AddNotePopup from './addNotePopup/AddNotePopup';
-import EditNotePopup from './editNotePopup/EditNotePopup';
+import AddNotePopup from './popup/addNotePopup/AddNotePopup';
+import EditNotePopup from './popup/editNotePopup/EditNotePopup';
 
 const Notes = ({ setNotes, notes, searchedNote }) => {
 	const [isAddPopClosed, setIsAddPopClosed] = useState(true);

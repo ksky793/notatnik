@@ -13,11 +13,11 @@ const Note = ({ note, deleteNote, editNote }) => {
 			<p className='note-paragraph'>{note.textArea}</p>
 			<div className='note-tools'>
 				<MdModeEditOutline
-					className='ic-edit-note'
+					className='ic ic-edit-note'
 					onClick={() => editNote(note.id)}
 				/>
 				<MdDeleteForever
-					className='ic-delete-note'
+					className='ic ic-delete-note'
 					onClick={() => deleteNote(note.id)}
 				/>
 			</div>

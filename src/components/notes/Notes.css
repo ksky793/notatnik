@@ -4,7 +4,7 @@
 	top: 0;
 	height: 100%;
 	width: 100%;
-	padding: 100px 50px;
+	padding: 120px 50px;
 	background-color: var(--notesBackgroundColor);
 	z-index: 1;
 }
@@ -14,7 +14,8 @@
 	margin-bottom: 20px;
 }
 .notes-hr {
-	border: 0.5px solid rgb(194, 194, 239);
+	border: 0.5px solid var(--hrColor);
+	box-shadow: 0 0 4px 1px var(--hrColor);
 }
 .notes-header {
 	font-size: 40px;

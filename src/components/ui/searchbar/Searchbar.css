@@ -3,16 +3,14 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	display: flex;
-	/* border: 2px solid green; */
-	background-color: white;
+	background-color: var(--searchBarBackgroundColor);
 	z-index: 2;
 }
 
 .searchbar-left-side {
 	position: relative;
-	/* width: 20px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,4 +27,13 @@
 	padding: 8px 2px;
 	font-size: 18px;
 	font-weight: 200;
+}
+.searchbar-input::placeholder {
+	color: var(--placeholderColor);
+	font-size: 18px;
+	font-weight: 100;
+}
+.ic-search {
+	font-size: 18px;
+	color: rgb(155, 155, 222);
 }

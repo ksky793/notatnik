@@ -6,8 +6,7 @@
 	border: none;
 }
 
-.btn-add-note .ic-plus,
-.header-add-note {
+.btn-add-note .header-add-note {
 	color: var(--addNoteHeaderColor);
 }
 .btn-add-note .ic-plus {
@@ -17,4 +16,20 @@
 .header-add-note {
 	font-size: 20px;
 	font-weight: 200;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.popup-btn {
+	border: none;
+	font-weight: 300;
+	font-size: 14px;
+	padding: 10px;
+	background-color: var(--popupButtonColor);
+	color: white;
+	transition: background-color 0.3s;
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+.popup-btn:hover {
+	background-color: var(--iconHoverColor);
 }
