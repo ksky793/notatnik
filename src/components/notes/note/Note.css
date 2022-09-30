@@ -1,17 +1,19 @@
 .note-container {
 	position: relative;
 	width: 300px;
-	height: 270px;
-	padding: 25px 25px;
+	height: 300px;
+	/* inline-size: 300px; */
+	overflow-wrap: break-word;
+	padding: 30px;
 	margin-right: 20px;
 	margin-bottom: 30px;
 	background-color: var(--noteBackgroundColor);
 	box-shadow: 0 0 10px 2px rgb(204, 214, 234);
 }
-.note-data {
+.note-date {
 	font-size: 16px;
 	font-weight: 200;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	color: var(--noteDataColor);
 }
 
@@ -35,7 +37,14 @@
 	bottom: 10%;
 }
 
-.ic-delete-note {
+.ic-delete-note,
+.ic-edit-note {
 	font-size: 30px;
+	cursor: pointer;
+}
+.ic-delete-note {
 	color: rgb(191, 70, 70);
+}
+.ic-edit-note {
+	color: rgb(77, 151, 230);
 }

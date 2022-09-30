@@ -1,18 +1,25 @@
-import { MdDeleteForever } from 'react-icons/md';
+import { MdDeleteForever, MdModeEditOutline } from 'react-icons/md';
 import Notes from '../Notes';
 import './Note.css';
 
-const Note = ({ note, notes, setNotes }) => {
-	const deleteNote = () => {
-		setNotes(notes.filter((el) => el.id != note.id));
+const Note = ({ note, deleteNote, editNote }) => {
+	const printData = () => {
+		console.log(note);
 	};
 	return (
 		<div className='note-container'>
-			<h3 className='note-data'>{note.data}</h3>
+			<h3 className='note-date'>{note.date}</h3>
 			<h2 className='note-title'>{note.title}</h2>
 			<p className='note-paragraph'>{note.textArea}</p>
 			<div className='note-tools'>
-				<MdDeleteForever className='ic-delete-note' onClick={deleteNote} />
+				<MdModeEditOutline
+					className='ic-edit-note'
+					onClick={() => editNote(note.id)}
+				/>
+				<MdDeleteForever
+					className='ic-delete-note'
+					onClick={() => deleteNote(note.id)}
+				/>
 			</div>
 		</div>
 	);

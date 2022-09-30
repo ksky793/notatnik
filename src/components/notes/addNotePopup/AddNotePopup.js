@@ -3,12 +3,12 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import Moment from 'react-moment';
 
-const AddNotePopup = ({ isClosed, setIsClosed, notes, setNotes }) => {
+const AddNotePopup = ({ setIsAddPopClosed, notes, setNotes }) => {
 	const [title, setTitle] = useState('');
 	const [textArea, setTextArea] = useState('');
 
 	const closePopup = () => {
-		setIsClosed(true);
+		setIsAddPopClosed(true);
 	};
 
 	const handleNotePopup = (e) => {
@@ -38,13 +38,13 @@ const AddNotePopup = ({ isClosed, setIsClosed, notes, setNotes }) => {
 		setNotes(newNotes);
 		setTitle('');
 		setTextArea('');
-		setIsClosed(true);
+		setIsAddPopClosed(true);
 	};
 
 	return (
 		<div
 			className='add-note-popup-container'
-			style={{ display: isClosed ? 'none' : 'flex' }}
+			// style={{ display: isAddPopClosed ? 'none' : 'flex' }}
 		>
 			<div className='add-note-popup'>
 				<h1 className='header-popup-add-note'>Add Note</h1>

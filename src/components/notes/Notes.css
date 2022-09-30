@@ -1,9 +1,12 @@
 .notes {
 	position: relative;
+	left: 0;
+	top: 0;
 	height: 100%;
 	width: 100%;
-	padding: 50px;
+	padding: 100px 50px;
 	background-color: var(--notesBackgroundColor);
+	z-index: 1;
 }
 .notes-top {
 	display: flex;
@@ -20,6 +23,7 @@
 }
 .notes-list {
 	display: flex;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	margin-top: 60px;
 }

@@ -7,11 +7,13 @@ function App() {
 	// Searched notes
 	const [searchedNote, setSearchedNote] = useState('');
 	//List of all notes
-	const [notes, setNotes] = useState([]);
+	const [notes, setNotes] = useState(
+		JSON.parse(localStorage.getItem('notes')) || []
+	);
 
 	useEffect(() => {
-		console.log(searchedNote);
-	}, [searchedNote]);
+		localStorage.setItem('notes', JSON.stringify(notes));
+	}, [notes]);
 
 	return (
 		<div className='App'>

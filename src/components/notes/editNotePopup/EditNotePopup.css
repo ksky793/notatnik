@@ -1,4 +1,4 @@
-.add-note-popup-container {
+.edit-note-popup-container {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -6,8 +6,7 @@
 	height: 100vh;
 	background-color: rgba(183, 209, 251, 0.875);
 }
-
-.add-note-popup {
+.edit-note-popup {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -18,7 +17,7 @@
 	flex-direction: column;
 	background-color: rgb(43, 76, 133);
 }
-.header-popup-add-note {
+.header-popup-edit-note {
 	color: white;
 	font-weight: 400;
 	margin-bottom: 25px;
@@ -35,15 +34,6 @@
 	margin-bottom: 40px;
 	padding: 10px;
 }
-.popup-btn-add-note {
+.popup-btn-edit-note {
 	padding: 10px;
-}
-
-.ic-close-popup {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	font-size: 30px;
-	color: rgb(225, 90, 90);
-	cursor: pointer;
 }

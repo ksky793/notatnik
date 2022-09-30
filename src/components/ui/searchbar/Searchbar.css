@@ -1,9 +1,13 @@
 .searchbar {
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 70px;
 	display: flex;
 	/* border: 2px solid green; */
 	background-color: white;
+	z-index: 2;
 }
 
 .searchbar-left-side {
