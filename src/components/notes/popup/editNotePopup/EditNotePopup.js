@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import '../Popup.css';
 
-const EditNotePopup = ({ editedNote, notes, setNotes, setIsEditPopClosed }) => {
+const EditNotePopup = ({
+	editedNote,
+	notes,
+	setNotes,
+	setIsEditPopClosed,
+	notify,
+}) => {
 	const [title, setTitle] = useState(editedNote[0].title);
 	const [textArea, setTextArea] = useState(editedNote[0].textArea);
 
@@ -21,6 +27,7 @@ const EditNotePopup = ({ editedNote, notes, setNotes, setIsEditPopClosed }) => {
 		});
 		setNotes(newNotesList);
 		setIsEditPopClosed(true);
+		notify('update');
 	};
 	return (
 		<div className='popup-container'>

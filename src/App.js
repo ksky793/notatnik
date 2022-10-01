@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import './App.css';
 import Notes from './components/notes/Notes';
 import Searchbar from './components/ui/searchbar/Searchbar';

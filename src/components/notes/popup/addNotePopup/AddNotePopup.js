@@ -2,7 +2,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
 import '../Popup.css';
 
-const AddNotePopup = ({ setIsAddPopClosed, notes, setNotes }) => {
+const AddNotePopup = ({ setIsAddPopClosed, notes, setNotes, notify }) => {
 	const [title, setTitle] = useState('');
 	const [textArea, setTextArea] = useState('');
 
@@ -33,11 +33,16 @@ const AddNotePopup = ({ setIsAddPopClosed, notes, setNotes }) => {
 			textArea: textArea,
 		};
 
-		const newNotes = [...notes, noteItem];
-		setNotes(newNotes);
-		setTitle('');
-		setTextArea('');
-		setIsAddPopClosed(true);
+		if (title === '' || textArea === '') {
+			notify('add-error');
+		} else {
+			const newNotes = [...notes, noteItem];
+			setNotes(newNotes);
+			setTitle('');
+			setTextArea('');
+			setIsAddPopClosed(true);
+			notify('add-success');
+		}
 	};
 
 	return (

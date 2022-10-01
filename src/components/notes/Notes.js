@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import BtnAddNote from '../ui/buttons/BtnAddNote';
 import Note from './note/Note';
-import './Notes.css';
 import AddNotePopup from './popup/addNotePopup/AddNotePopup';
 import EditNotePopup from './popup/editNotePopup/EditNotePopup';
+import './Notes.css';
 
 const Notes = ({ setNotes, notes, searchedNote }) => {
 	const [isAddPopClosed, setIsAddPopClosed] = useState(true);
@@ -13,12 +15,33 @@ const Notes = ({ setNotes, notes, searchedNote }) => {
 
 	const deleteNote = (id) => {
 		setNotes(notes.filter((note) => note.id !== id));
+		notify('delete');
 	};
 
 	const editNote = (id) => {
 		const note = notes.filter((note) => note.id === id);
 		setEditedNote(note);
 		setIsEditPopClosed(false);
+	};
+
+	const notify = (popup) => {
+		if (popup === 'update')
+			toast.success('The note updated', {
+				position: toast.POSITION.BOTTOM_RIGHT,
+			});
+		if (popup === 'add-success')
+			toast.success('The note added', {
+				position: toast.POSITION.BOTTOM_RIGHT,
+			});
+		if (popup === 'add-error')
+			toast.error('Try to add a note again', {
+				position: toast.POSITION.BOTTOM_RIGHT,
+			});
+		if (popup === 'delete') {
+			toast.success('The note deleted', {
+				position: toast.POSITION.BOTTOM_RIGHT,
+			});
+		}
 	};
 
 	return (
@@ -60,6 +83,7 @@ const Notes = ({ setNotes, notes, searchedNote }) => {
 					setIsAddPopClosed={setIsAddPopClosed}
 					setNotes={setNotes}
 					notes={notes}
+					notify={notify}
 				/>
 			)}
 
@@ -69,8 +93,10 @@ const Notes = ({ setNotes, notes, searchedNote }) => {
 					setIsEditPopClosed={setIsEditPopClosed}
 					setNotes={setNotes}
 					notes={notes}
+					notify={notify}
 				/>
 			)}
+			<ToastContainer />
 		</div>
 	);
 };
